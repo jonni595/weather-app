@@ -1,7 +1,11 @@
+import DateStamp from "../components/DateStamp";
+
 const Grid = () => {
   return (
     <main className="grid">
-      <aside className="primary-aside">aside 1</aside>
+      <aside className="primary-aside">
+        <DateStamp city="Vancouver" />
+      </aside>
       <aside className="secondary-aside">aside 2</aside>
       <section className="primary-section">section 1</section>
       <section className="secondary-section">section 2</section>
