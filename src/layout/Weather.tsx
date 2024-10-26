@@ -1,6 +1,6 @@
 import DateStamp from "../components/DateStamp";
 
-const Grid = () => {
+const Weather = () => {
   return (
     <main className="grid">
       <aside className="primary-aside">
@@ -14,4 +14,4 @@ const Grid = () => {
   );
 };
 
-export default Grid;
+export default Weather;

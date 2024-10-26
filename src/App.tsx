@@ -1,9 +1,9 @@
-import Grid from "./layout/Grid";
+import Weather from "./layout/Weather";
 
 const App = () => {
   return (
     <>
-      <Grid />
+      <Weather />
     </>
   );
 };
