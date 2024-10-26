@@ -1,8 +1,10 @@
+import Grid from "./layout/Grid";
+
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Grid />
+    </>
   );
 };
 

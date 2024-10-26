@@ -7,8 +7,9 @@
     #097eb4,
     #0095c0
   );
-  --secondary-color: #06293d;
+  --grid-color: #222931;
   --light-color: #f5f5f5;
+  --font: "system-ui", sans-serif;
 }
 
 * {
@@ -18,14 +19,50 @@
 }
 
 body {
-  font-family: "system-ui", sans-serif;
+  font-family: var(--font);
   font-size: 1rem;
   line-height: 1.5;
   background-image: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--light-color);
   min-height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "aside section1 section1"
+    "aside2 section2 section2"
+    "aside2 footer footer";
+  gap: 0.5rem;
+  width: 40rem;
+  height: 25rem;
+  background-color: var(--grid-color);
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+.primary-aside {
+  grid-area: aside;
+}
+
+.secondary-aside {
+  grid-area: aside2;
+}
+
+.primary-section {
+  grid-area: section1;
+}
+
+.secondary-section {
+  grid-area: section2;
+}
+
+.footer {
+  grid-area: footer;
 }
