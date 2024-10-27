@@ -66,6 +66,10 @@ body {
 
 .primary-section {
   grid-area: section1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .secondary-section {
@@ -95,7 +99,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  color: var(--secondary-color);
 }
 .city {
   text-transform: capitalize;
@@ -110,4 +113,33 @@ body {
   top: 5.7rem;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.temp-summary {
+  width: 18rem;
+  /* outline: 2px solid var(--light-color); */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pressure,
+.humidity,
+.wind {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pressure,
+.humidity,
+.wind > p {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.pressure > span,
+.humidity > span,
+.wind > span {
+  font-weight: normal;
 }
