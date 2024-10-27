@@ -71,3 +71,10 @@ export interface TempSummary {
   humidity: number | undefined;
   wind: number | undefined;
 }
+
+export interface ForecastProps {
+  id: number;
+  Icon: IconType;
+  date: string;
+  temp: string;
+}

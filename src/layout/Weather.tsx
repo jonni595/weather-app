@@ -3,6 +3,8 @@ import DateStamp from "../components/DateStamp";
 import TempDisplay from "../components/TempDisplay";
 import { useWeather } from "../hooks/useWeather";
 import TempSummary from "../components/TempSummary";
+import Forecast from "../components/Forecast";
+import { dailyForecast } from "../data";
 
 const Weather = () => {
   const { weather, loading, error } = useWeather("london");
@@ -32,7 +34,11 @@ const Weather = () => {
               wind={weather?.wind.speed}
             />
           </section>
-          <section className="secondary-section">section 2</section>
+          <section className="secondary-section">
+            {dailyForecast.map((forecast) => (
+              <Forecast {...forecast} key={forecast.id} />
+            ))}
+          </section>
           <footer className="footer">footer</footer>
         </main>
       )}

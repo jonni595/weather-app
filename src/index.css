@@ -69,11 +69,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .secondary-section {
   grid-area: section2;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -117,7 +119,6 @@ body {
 
 .temp-summary {
   width: 18rem;
-  /* outline: 2px solid var(--light-color); */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -142,4 +143,31 @@ body {
 .humidity > span,
 .wind > span {
   font-weight: normal;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80px;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--light-color);
+    color: var(--grid-color);
+    transform: scale(1.1);
+  }
+}
+
+.forecast p:nth-child(3) {
+  font-weight: bold;
+}
+
+.icon-forecast {
+  width: 2rem;
+  height: 2rem;
 }
