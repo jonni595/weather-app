@@ -1,4 +1,4 @@
-import { IoMdSunny } from "react-icons/io";
+import { IoSunnyOutline } from "react-icons/io5";
 import DateStamp from "../components/DateStamp";
 import TemperatureDisplay from "../components/TemperatureDisplay";
 import { useWeather } from "../hooks/useWeather";
@@ -17,10 +17,9 @@ const Weather = () => {
           </aside>
           <aside className="secondary-aside">
             <TemperatureDisplay
-              Icon={IoMdSunny}
+              Icon={IoSunnyOutline}
               temp={
-                weather?.main.temp &&
-                `${Math.round(weather?.main.temp - 273.15)}°C`
+                weather?.main.temp && Math.round(weather?.main.temp - 273.15)
               }
               description={weather?.weather[0].description}
             />

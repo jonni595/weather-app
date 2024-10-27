@@ -1,3 +1,4 @@
+import { FaLocationDot } from "react-icons/fa6";
 import { getDate } from "../functions/getDate";
 import { DateStampProps } from "../interface";
 
@@ -8,7 +9,10 @@ const DateStamp: React.FC<DateStampProps> = ({ city }) => {
     <>
       <h1>{day}</h1>
       <p>{formattedDate}</p>
-      <p className="city">{city}</p>
+      <div className="location">
+        <FaLocationDot />
+        <p className="city">{city}</p>
+      </div>
     </>
   );
 };

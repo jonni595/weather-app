@@ -77,12 +77,12 @@ body {
 }
 
 .icon {
-  width: 4rem;
-  height: 4rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 
 .temp {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -91,7 +91,23 @@ body {
   font-weight: bold;
 }
 
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--secondary-color);
+}
 .city {
   text-transform: capitalize;
-  color: var(--secondary-color);
+}
+
+.temperature {
+  position: relative;
+}
+
+.unit {
+  position: absolute;
+  top: 5.7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
