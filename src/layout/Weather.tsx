@@ -6,10 +6,22 @@ import TempSummary from "../components/TempSummary";
 import Forecast from "../components/Forecast";
 import { dailyForecast } from "../data";
 import Loading from "../components/Loading";
+import Location from "../components/Location";
+import { useState } from "react";
 
 const Weather = () => {
-  const { weather, loading, error } = useWeather("london");
+  const [city, setCity] = useState("");
+  const { weather, loading, error, setLocation } = useWeather("london");
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCity(e.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    if (!city) return;
+    setLocation(city);
+    setCity("");
+  };
   return (
     <>
       {loading ? (
@@ -40,7 +52,13 @@ const Weather = () => {
               <Forecast {...forecast} key={forecast.id} />
             ))}
           </section>
-          <footer className="footer">footer</footer>
+          <footer className="footer">
+            <Location
+              search={city}
+              onSearch={handleSearch}
+              onSearchClick={handleSearchSubmit}
+            />
+          </footer>
         </main>
       )}
       {error && <p>{error}</p>}

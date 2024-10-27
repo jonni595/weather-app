@@ -78,3 +78,9 @@ export interface ForecastProps {
   date: string;
   temp: string;
 }
+
+export interface ButtonProps {
+  search: string;
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearchClick: () => void;
+}
