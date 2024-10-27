@@ -29,7 +29,11 @@ export const useWeather = (city: string) => {
   };
 
   useEffect(() => {
-    getWeather();
+    const timer = setTimeout(() => {
+      getWeather();
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return {

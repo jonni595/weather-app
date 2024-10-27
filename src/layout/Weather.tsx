@@ -5,6 +5,7 @@ import { useWeather } from "../hooks/useWeather";
 import TempSummary from "../components/TempSummary";
 import Forecast from "../components/Forecast";
 import { dailyForecast } from "../data";
+import Loading from "../components/Loading";
 
 const Weather = () => {
   const { weather, loading, error } = useWeather("london");
@@ -12,7 +13,7 @@ const Weather = () => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <main className="grid">
           <aside className="primary-aside">

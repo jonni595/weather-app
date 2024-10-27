@@ -171,3 +171,64 @@ body {
   width: 2rem;
   height: 2rem;
 }
+
+.loader {
+  display: flex;
+  position: relative;
+  width: 86px;
+  height: 45px;
+}
+
+.loader div {
+  position: absolute;
+  top: 0px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: loader_wave alternate 1.2s infinite;
+  animation-timing-function: cubic-bezier(0.56, -0.01, 0.48, 1);
+}
+
+.loader div:nth-child(1) {
+  animation-delay: 0s;
+  left: 0px;
+}
+.loader div:nth-child(2) {
+  animation-delay: 0.15s;
+  left: 11px;
+}
+.loader div:nth-child(3) {
+  animation-delay: 0.3s;
+  left: 22px;
+}
+.loader div:nth-child(4) {
+  animation-delay: 0.45s;
+  left: 33px;
+}
+.loader div:nth-child(5) {
+  animation-delay: 0.6s;
+  left: 44px;
+}
+.loader div:nth-child(6) {
+  animation-delay: 0.75s;
+  left: 55px;
+}
+.loader div:nth-child(7) {
+  animation-delay: 0.9s;
+  left: 66px;
+}
+.loader div:nth-child(8) {
+  animation-delay: 1.05s;
+  left: 77px;
+}
+
+@keyframes loader_wave {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(36px);
+  }
+}
