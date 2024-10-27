@@ -65,3 +65,9 @@ export interface Temp {
   temp: number | string | undefined;
   description: string | undefined;
 }
+
+export interface TempSummary {
+  pressure: number | undefined;
+  humidity: number | undefined;
+  wind: number | undefined;
+}

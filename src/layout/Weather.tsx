@@ -1,7 +1,8 @@
 import { IoSunnyOutline } from "react-icons/io5";
 import DateStamp from "../components/DateStamp";
-import TemperatureDisplay from "../components/TemperatureDisplay";
+import TempDisplay from "../components/TempDisplay";
 import { useWeather } from "../hooks/useWeather";
+import TempSummary from "../components/TempSummary";
 
 const Weather = () => {
   const { weather, loading, error } = useWeather("london");
@@ -16,7 +17,7 @@ const Weather = () => {
             <DateStamp city={`${weather?.name}, ${weather?.sys.country}`} />
           </aside>
           <aside className="secondary-aside">
-            <TemperatureDisplay
+            <TempDisplay
               Icon={IoSunnyOutline}
               temp={
                 weather?.main.temp && Math.round(weather?.main.temp - 273.15)
@@ -24,7 +25,13 @@ const Weather = () => {
               description={weather?.weather[0].description}
             />
           </aside>
-          <section className="primary-section">section 1</section>
+          <section className="primary-section">
+            <TempSummary
+              pressure={weather?.main.pressure}
+              humidity={weather?.main.humidity}
+              wind={weather?.wind.speed}
+            />
+          </section>
           <section className="secondary-section">section 2</section>
           <footer className="footer">footer</footer>
         </main>
