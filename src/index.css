@@ -9,6 +9,7 @@
   );
   --grid-color: #222931;
   --light-color: #f5f5f5;
+  --secondary-color: #62778e;
   --font: "system-ui", sans-serif;
 }
 
@@ -52,11 +53,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
+  padding-top: 1rem;
 }
 
 .secondary-aside {
   grid-area: aside2;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .primary-section {
@@ -69,4 +74,24 @@ body {
 
 .footer {
   grid-area: footer;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.description {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.city {
+  text-transform: capitalize;
+  color: var(--secondary-color);
 }
