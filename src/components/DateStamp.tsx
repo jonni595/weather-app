@@ -8,7 +8,7 @@ const DateStamp: React.FC<DateStampProps> = ({ city }) => {
     <>
       <h1>{day}</h1>
       <p>{formattedDate}</p>
-      <p>{city}</p>
+      <p className="city">{city}</p>
     </>
   );
 };
