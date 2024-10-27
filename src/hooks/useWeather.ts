@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { IWeather } from "../interface";
 import { API_KEY } from "./../config";
 
-export const useWeather = (initialValue: string) => {
+export const useWeather = (city: string) => {
   const [weather, setWeather] = useState<IWeather | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ export const useWeather = (initialValue: string) => {
   const getWeather = async () => {
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${initialValue}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
       );
       if (!res.ok) {
         throw new Error("Failed to fetch weather data");
