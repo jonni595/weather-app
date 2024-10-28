@@ -84,3 +84,7 @@ export interface ButtonProps {
   onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearchClick: () => void;
 }
+
+export interface TimedMessageProps {
+  message: string;
+}

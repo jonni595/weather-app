@@ -12,6 +12,7 @@
   --secondary-color: #62778e;
   --font: "system-ui", sans-serif;
   --button-color: #f3c623;
+  --error-color: #af1740;
 }
 
 * {
@@ -47,6 +48,7 @@ body {
   background-color: var(--grid-color);
   padding: 0.5rem;
   border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .primary-aside {
@@ -271,4 +273,12 @@ body {
   &:hover {
     transform: scale(1.2);
   }
+}
+
+.timed-message {
+  background: var(--error-color);
+  opacity: 0.8;
+  color: var(--light-color);
+  padding: 0.5rem;
+  border-radius: 10px;
 }

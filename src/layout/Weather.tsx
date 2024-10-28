@@ -8,6 +8,7 @@ import { dailyForecast } from "../data";
 import Loading from "../components/Loading";
 import Location from "../components/Location";
 import { useState } from "react";
+import TimedMessage from "../components/TimedMessage";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -61,7 +62,7 @@ const Weather = () => {
           </footer>
         </main>
       )}
-      {error && <p>{error}</p>}
+      {error && <TimedMessage message={error} />}
     </>
   );
 };
