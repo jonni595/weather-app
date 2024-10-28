@@ -1,14 +1,15 @@
-import { IoSunnyOutline } from "react-icons/io5";
+import { useState } from "react";
+import { IoSunnyOutline, IoRainyOutline, IoSnowOutline } from "react-icons/io5";
+import { IoMdCloudOutline } from "react-icons/io";
 import DateStamp from "../components/DateStamp";
 import TempDisplay from "../components/TempDisplay";
 import { useWeather } from "../hooks/useWeather";
 import TempSummary from "../components/TempSummary";
 import Forecast from "../components/Forecast";
-import { dailyForecast } from "../data";
 import Loading from "../components/Loading";
 import Location from "../components/Location";
-import { useState } from "react";
 import TimedMessage from "../components/TimedMessage";
+import { dailyForecast } from "../data";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -23,6 +24,28 @@ const Weather = () => {
     setLocation(city);
     setCity("");
   };
+
+  const showIcon = () => {
+    let iconForecast;
+
+    if (
+      weather?.weather[0].main === "Clouds" ||
+      weather?.weather[0].main === "Mist"
+    ) {
+      iconForecast = IoMdCloudOutline;
+    } else if (weather?.weather[0].main === "Rain") {
+      iconForecast = IoRainyOutline;
+    } else if (weather?.weather[0].main === "Snow") {
+      iconForecast = IoSnowOutline;
+    } else {
+      iconForecast = IoSunnyOutline;
+    }
+
+    return iconForecast;
+  };
+
+  const forecast = showIcon();
+
   return (
     <>
       {loading ? (
@@ -34,7 +57,7 @@ const Weather = () => {
           </aside>
           <aside className="secondary-aside">
             <TempDisplay
-              Icon={IoSunnyOutline}
+              Icon={forecast}
               temp={
                 weather?.main.temp && Math.round(weather?.main.temp - 273.15)
               }

@@ -1,6 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { getDate } from "../functions/getDate";
-import { DateStampProps } from "../interface";
+import type { DateStampProps } from "../interface";
 
 const DateStamp: React.FC<DateStampProps> = ({ city }) => {
   const { day, formattedDate } = getDate();
