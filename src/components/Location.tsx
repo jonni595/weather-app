@@ -1,4 +1,4 @@
-import { IoSearchOutline } from "react-icons/io5";
+import { BsSearch } from "react-icons/bs";
 import type { ButtonProps } from "../interface";
 
 const Location: React.FC<ButtonProps> = ({
@@ -16,7 +16,7 @@ const Location: React.FC<ButtonProps> = ({
         onChange={onSearch}
       />
       <button className="btn" onClick={onSearchClick}>
-        <IoSearchOutline />
+        <BsSearch />
       </button>
     </>
   );
