@@ -1,6 +1,6 @@
 import type { Temp } from "../interface";
 
-const TemperatureDisplay: React.FC<Temp> = ({ temp, Icon, description }) => {
+const TempDisplay: React.FC<Temp> = ({ temp, Icon, description }) => {
   return (
     <div className="temperature">
       <Icon className="icon" />
@@ -13,4 +13,4 @@ const TemperatureDisplay: React.FC<Temp> = ({ temp, Icon, description }) => {
   );
 };
 
-export default TemperatureDisplay;
+export { TempDisplay };

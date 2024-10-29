@@ -22,4 +22,4 @@ const Location: React.FC<ButtonProps> = ({
   );
 };
 
-export default Location;
+export { Location };

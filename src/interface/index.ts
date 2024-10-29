@@ -76,6 +76,7 @@ export interface ForecastProps {
   id: number;
   Icon: IconType;
   temp: string;
+  date?: string;
 }
 
 export interface ButtonProps {

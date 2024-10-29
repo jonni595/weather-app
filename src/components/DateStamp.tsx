@@ -17,4 +17,4 @@ const DateStamp: React.FC<DateStampProps> = ({ city }) => {
   );
 };
 
-export default DateStamp;
+export { DateStamp };

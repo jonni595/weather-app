@@ -19,4 +19,4 @@ const TempSummary: React.FC<TempSummary> = ({ pressure, humidity, wind }) => {
   );
 };
 
-export default TempSummary;
+export { TempSummary };

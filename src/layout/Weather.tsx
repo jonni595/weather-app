@@ -2,16 +2,18 @@ import { useState } from "react";
 import { IoSunnyOutline, IoRainyOutline, IoSnowOutline } from "react-icons/io5";
 import { IoMdCloudOutline } from "react-icons/io";
 import { BsCloudHaze } from "react-icons/bs";
-import DateStamp from "../components/DateStamp";
-import TempDisplay from "../components/TempDisplay";
-import { useWeather } from "../hooks/useWeather";
-import TempSummary from "../components/TempSummary";
-import Forecast from "../components/Forecast";
-import Loading from "../components/Loading";
-import Location from "../components/Location";
-import TimedMessage from "../components/TimedMessage";
+import {
+  DateStamp,
+  Forecast,
+  Loading,
+  Location,
+  TempDisplay,
+  TempSummary,
+  TimedMessage,
+} from "../components";
 import { dailyForecast } from "../data";
 import { getLimit } from "../functions/getLimit";
+import { useWeather } from "../hooks/useWeather";
 
 const Weather = () => {
   const [city, setCity] = useState("");

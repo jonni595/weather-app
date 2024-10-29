@@ -20,4 +20,4 @@ const TimedMessage: React.FC<TimedMessageProps> = ({ message }) => {
   );
 };
 
-export default TimedMessage;
+export { TimedMessage };
