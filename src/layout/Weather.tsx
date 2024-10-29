@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoSunnyOutline, IoRainyOutline, IoSnowOutline } from "react-icons/io5";
 import { IoMdCloudOutline } from "react-icons/io";
+import { BsCloudHaze } from "react-icons/bs";
 import DateStamp from "../components/DateStamp";
 import TempDisplay from "../components/TempDisplay";
 import { useWeather } from "../hooks/useWeather";
@@ -10,6 +11,7 @@ import Loading from "../components/Loading";
 import Location from "../components/Location";
 import TimedMessage from "../components/TimedMessage";
 import { dailyForecast } from "../data";
+import { getLimit } from "../functions/getLimit";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -37,6 +39,8 @@ const Weather = () => {
       iconForecast = IoRainyOutline;
     } else if (weather?.weather[0].main === "Snow") {
       iconForecast = IoSnowOutline;
+    } else if (weather?.weather[0].main === "Haze") {
+      iconForecast = BsCloudHaze;
     } else {
       iconForecast = IoSunnyOutline;
     }
@@ -53,7 +57,11 @@ const Weather = () => {
       ) : (
         <main className="grid">
           <aside className="primary-aside">
-            <DateStamp city={`${weather?.name}, ${weather?.sys.country}`} />
+            <DateStamp
+              city={`${getLimit(weather?.name as string)}, ${
+                weather?.sys.country
+              }`}
+            />
           </aside>
           <aside className="secondary-aside">
             <TempDisplay
