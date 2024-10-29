@@ -158,10 +158,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 80px;
+  width: 90px;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease-in-out;
+  user-select: none;
 
   &:hover {
     background-color: var(--light-color);

@@ -75,7 +75,6 @@ export interface TempSummary {
 export interface ForecastProps {
   id: number;
   Icon: IconType;
-  date: string;
   temp: string;
 }
 
