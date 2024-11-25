@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import type { IWeather } from "../interface";
-import { API_KEY } from "./../config";
 
 export const useWeather = (initialLocation: string) => {
   const [weather, setWeather] = useState<IWeather | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [location, setLocation] = useState<string>(initialLocation);
+
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getWeather = async (city: string) => {
     try {

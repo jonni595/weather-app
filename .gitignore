@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # My config
-config.ts
+.env
